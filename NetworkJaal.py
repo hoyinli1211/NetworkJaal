@@ -50,7 +50,7 @@ df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
 st.write(df_edge)
 st.write(df_node)
 
-port=get_unused_port()
+port=8050
 while True:
     try:
         Jaal(edge_df, node_df).plot(port=port)
