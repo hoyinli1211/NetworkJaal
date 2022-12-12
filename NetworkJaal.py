@@ -37,6 +37,6 @@ st.write(df_node)
 
 app = Jaal(df_edge, df_node).create()
 server = app.server
-app.plot()
+plot(app)
    
 #End of Script  
