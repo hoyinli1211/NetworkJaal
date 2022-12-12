@@ -9,6 +9,7 @@ xlsxwriter
 
 #Network Visualization
 jaal
+addEdge
 networkx
 Network
 #pyvis
