@@ -38,7 +38,13 @@ df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
 st.write(df_edge)
 st.write(df_node)
 
-app = Jaal(df_edge, df_node).plot()
-server = app.server
+port=8050
+while True:
+    try:
+        Jaal(edge_df, node_df).plot(port=port)
+    except:
+        port+=1
+#app = Jaal(df_edge, df_node).plot()
+#server = app.server
    
 #End of Script  
