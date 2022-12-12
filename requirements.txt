@@ -9,10 +9,10 @@ xlsxwriter
 
 #Network Visualization
 jaal
-#networkx
-#Network
+networkx
+Network
 #pyvis
-#matplotlib
+matplotlib
 
 #Web scrape
 #selenium==4.2.0
