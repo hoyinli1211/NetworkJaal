@@ -32,7 +32,7 @@ df_edge = df_edge_temp
 st.write(df_edge)
 
 df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
-#df_edge['title'] = df_edge.apply (lambda row: row.from + ' transferred HK$' + str(row.Amount) + ' to ' + row.to, axis=1)
+df_edge['title'] = df_edge.apply (lambda row: row.from + ' transferred HK$' + str(row.Amount) + ' to ' + row.to, axis=1)
 
 Jaal(df_edge, df_node).plot()
 
