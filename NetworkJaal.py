@@ -9,9 +9,10 @@ import pandas as pd
 import numpy as np
 from jaal import Jaal
 import dash
-from dash import Dash, html
+from dash import Dash, html, dcc, Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
+import plotly.graph_objects as go
 #import networkx as nx
 #from pyvis.network import Network
 import matplotlib.pyplot as plt
@@ -39,8 +40,9 @@ df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
 st.write(df_edge)
 st.write(df_node)
 
-app = Jaal(df_edge, df_node).plot(directed=True)
-server = app.server
+app = Dash(__name__)
+app.layout = html.Div(
+)
 
 
 #End of Script  
