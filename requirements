@@ -1,0 +1,25 @@
+streamlit==1.14.0
+pandas==1.5.2
+numpy
+
+#Excel
+openpyxl
+pyxlsb
+xlsxwriter
+
+#Network Visualization
+jaal
+#networkx
+#Network
+#pyvis
+#matplotlib
+
+#Web scrape
+#selenium==4.2.0
+#beautifulsoup4==4.9.0
+#webdriver-manager
+#webdriver_manager
+#option
+#Image
+#opencv-python
+#FPDF
