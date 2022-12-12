@@ -40,6 +40,8 @@ st.write(df_node)
 
 app = Jaal(df_edge, df_node).create()
 server = app.server
-st.write(type(app))
+
+st.plotly_chart(app)
+
    
 #End of Script  
