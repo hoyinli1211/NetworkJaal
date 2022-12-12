@@ -10,7 +10,7 @@ xlsxwriter
 #Network Visualization
 jaal
 networkx
-#Network
+Network
 #pyvis
 matplotlib
 
