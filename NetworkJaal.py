@@ -8,8 +8,8 @@ import os, sys
 import pandas as pd
 import numpy as np
 from jaal import Jaal
-import networkx as nx
-from pyvis.network import Network
+#import networkx as nx
+#from pyvis.network import Network
 import matplotlib.pyplot as plt
 import math
 
