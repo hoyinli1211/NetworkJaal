@@ -12,7 +12,6 @@ import dash
 from dash import Dash, html
 import dash_core_components as dcc
 import dash_html_components as html
-import dash_cytoscape as cyto
 #import networkx as nx
 #from pyvis.network import Network
 import matplotlib.pyplot as plt
