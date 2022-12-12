@@ -38,10 +38,7 @@ df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
 st.write(df_edge)
 st.write(df_node)
 
-app = Jaal(df_edge, df_node).create()
+app = Jaal(df_edge, df_node).plot()
 server = app.server
-
-st.plotly_chart(app)
-
    
 #End of Script  
