@@ -9,24 +9,14 @@ import pandas as pd
 import numpy as np
 from jaal import Jaal
 import dash
+from dash import Dash, html
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_cytoscape as cyto
 #import networkx as nx
 #from pyvis.network import Network
 import matplotlib.pyplot as plt
 import math
-
-def get_unused_port():
-    """
-    Get an empty port for the Pyro nameservr by opening a socket on random port,
-    getting port number, and closing it [not atomic, so race condition is possible...]
-    Might be better to open with port 0 (random) and then figure out what port it used.
-    """
-    so = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    so.bind(('localhost', 0))
-    _, port = so.getsockname()
-    so.close()
-    return port 
 
 #initialization of session state
 if 'indEnd' not in st.session_state:
@@ -50,7 +40,7 @@ df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
 st.write(df_edge)
 st.write(df_node)
 
-app = Jaal(df_edge, df_node).create()
+app = Jaal(df_edge, df_node).plot(directed=True)
 server = app.server
 
 
