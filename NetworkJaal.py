@@ -38,7 +38,7 @@ df_edge = df_edge_temp
 df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
 df_edge['title'] = df_edge.apply (lambda row: row.Orig + ' transferred HK$' + str(row.Amount) + ' to ' + row.Dest, axis=1)
 
-G1 = nx.from_pandas_edgelist(df=df_edge_fraud, source='Orig', target='Dest', edge_attr=['weight', 'title'], create_using=nx.DiGraph())
+G1 = nx.from_pandas_edgelist(df=df_edge, source='Orig', target='Dest', edge_attr=['weight', 'title'], create_using=nx.DiGraph())
 
 pos = nx.layout.spring_layout(G)
 for node in G.nodes:
