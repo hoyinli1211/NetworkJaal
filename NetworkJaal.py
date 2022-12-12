@@ -44,6 +44,7 @@ while True:
         Jaal(edge_df, node_df).plot(port=port)
     except:
         port+=1
+        st.write(port)
 #app = Jaal(df_edge, df_node).plot()
 #server = app.server
    
