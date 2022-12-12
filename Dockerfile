@@ -6,7 +6,7 @@ RUN python -m venv /opt/venv
 # Enable venv
 ENV PATH="/opt/venv/bin:$PATH"
 
-RUN pip install -r requirements.txt
+RUN .\\myvenv\\Scripts\\activate.bat && pip install -r requirements.txt
 EXPOSE 80
 
 RUN mkdir ~/.streamlit
