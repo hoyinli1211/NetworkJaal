@@ -35,14 +35,37 @@ df_node = df_node_temp
 df_edge = df_edge_temp
 
 df_edge['weight'] = df_edge.apply (lambda row: len(str(row.Amount)), axis=1)
-#df_edge['title'] = df_edge.apply (lambda row: row.from + ' transferred HK$' + str(row.Amount) + ' to ' + row.to, axis=1)
+df_edge['title'] = df_edge.apply (lambda row: row.Orig + ' transferred HK$' + str(row.Amount) + ' to ' + row.Dest, axis=1)
 
-st.write(df_edge)
-st.write(df_node)
+G1 = nx.from_pandas_edgelist(df=df_edge_fraud, source='Orig', target='Dest', edge_attr=['weight', 'title'], create_using=nx.DiGraph())
 
-app = Dash(__name__)
-app.layout = html.Div(
-)
+pos = nx.layout.spring_layout(G)
+for node in G.nodes:
+    G.nodes[node]['pos'] = list(pos[node])
+    
+# Make list of nodes for plotly
+node_x = []
+node_y = []
+text = []
+for node in G.nodes():
+    x, y = G.nodes[node]['pos']
+    node_x.append(x)
+    node_y.append(y)
+    text.append(node)
+    
+edge_x = []
+edge_y = []
+for edge in G.edges():
+    start = G.nodes[edge[0]]['pos']
+    end = G.nodes[edge[1]]['pos']
+    edge_x, edge_y = addEdge(start, end, edge_x, edge_y, .8, 'end', .04, 30, nodeSize)
+    
+
+edge_trace = go.Scatter(x=edge_x, y=edge_y, line=dict(width=lineWidth, color=lineColor), hoverinfo='none', mode='lines', text=text)
+
+
+node_trace = go.Scatter(x=node_x, y=node_y, text=text,mode='markers+text', hoverinfo='text', marker=dict(showscale=False, color = nodeColor, size=nodeSize))
+
 
 
 #End of Script  
