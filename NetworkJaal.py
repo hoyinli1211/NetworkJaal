@@ -13,6 +13,7 @@ import dash
 from dash import Dash, html, dcc, Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
+from addEdge import addEdge
 import plotly.graph_objects as go
 #import networkx as nx
 #from pyvis.network import Network
