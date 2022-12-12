@@ -8,6 +8,7 @@ import os, sys
 import pandas as pd
 import numpy as np
 from jaal import Jaal
+import networkx as nx
 import dash
 from dash import Dash, html, dcc, Input, Output
 import dash_core_components as dcc
