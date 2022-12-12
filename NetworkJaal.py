@@ -60,7 +60,7 @@ edge_y = []
 for edge in G.edges():
     start = G.nodes[edge[0]]['pos']
     end = G.nodes[edge[1]]['pos']
-    edge_x, edge_y = addEdge(start, end, edge_x, edge_y, .8, 'end', .04, 30, nodeSize)
+    edge_x, edge_y = add_edge(start, end)
     
 edge_trace = go.Scatter(x=edge_x, y=edge_y, line=dict(width=lineWidth, color=lineColor), hoverinfo='none', mode='lines', text=text)
 node_trace = go.Scatter(x=node_x, y=node_y, text=text,mode='markers+text', hoverinfo='text', marker=dict(showscale=False, color = nodeColor, size=nodeSize))
